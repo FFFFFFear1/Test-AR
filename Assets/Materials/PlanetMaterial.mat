@@ -159,12 +159,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - FillRate: 0
+    - FillRate: 0.63
     - ProgressBorder: 2.5
     - Vector1_195e33568a2f4dcea97dbd96a9166d3c: 0.63
     - Vector1_3411c4a6de4340bf97c038998e621867: 0.5
     - Vector1_3468bdd3268e4ce89b4feb9e3335f445: 2.5
-    - Vector1_75d730b1d2e2493bb0daf552432540c2: 1
+    - Vector1_75d730b1d2e2493bb0daf552432540c2: 0.5
     - Vector1_a53e0a5f2bdc44b980d40513d9d8d7d1: 1
     - Vector1_ea2d8eecbf03440d8530d74e792ecd5d: 0
     - _AORemapMax: 1

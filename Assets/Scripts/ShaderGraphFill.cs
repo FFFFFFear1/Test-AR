@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShaderGraphFill : MonoBehaviour
 {
+    public Slider slider;
     private float _FillRateValue = 0.65f;
     private float progressBorder = 2.5f;
     
@@ -11,14 +13,17 @@ public class ShaderGraphFill : MonoBehaviour
 
     void Start()
     {
+        if (slider.value < 0.65f)
+            objectMaterial.SetFloat("FillRate", 1.3f - slider.value);
+        
         objectMaterial = GetComponent<Renderer>().material;
         objectMaterial.SetFloat("FillRate", _FillRateValue);
         objectMaterial.SetFloat("ProgressBorder", progressBorder);
     }
     
-    public void ChangeValue(float value)
+    public void ChangeValue()
     {
-        if (value < 0.65f)
-            objectMaterial.SetFloat("FillRate", 1.3f - value);
+        if (slider.value < 0.65f)
+            objectMaterial.SetFloat("FillRate", 1.3f - slider.value);
     }
 }
