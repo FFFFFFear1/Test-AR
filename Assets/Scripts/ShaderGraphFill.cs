@@ -4,27 +4,21 @@ using UnityEngine;
 
 public class ShaderGraphFill : MonoBehaviour
 {
-    // [SerializeField] private float progressSteps = 10f;
-
-    // private float _FillRateValue;
-    // private float progressBorder;
-    // private float stepSize;
+    private float _FillRateValue = 0.65f;
+    private float progressBorder = 2.5f;
     
     Material objectMaterial;
 
     void Start()
     {
         objectMaterial = GetComponent<Renderer>().material;
-        // progressBorder = GetComponent<MeshFilter>().mesh.bounds.size.y / 2;
-        // _FillRateValue = -progressBorder;
-        // objectMaterial.SetFloat("FillRate", _FillRateValue);
-        // stepSize = (2 * progressBorder) / progressSteps;
+        objectMaterial.SetFloat("FillRate", _FillRateValue);
+        objectMaterial.SetFloat("ProgressBorder", progressBorder);
     }
-
-
+    
     public void ChangeValue(float value)
     {
-        if (value < 0.63f)
+        if (value < 0.65f)
             objectMaterial.SetFloat("FillRate", 1.3f - value);
     }
 }
